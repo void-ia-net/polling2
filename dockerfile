@@ -1,17 +1,15 @@
-# Usa una imagen base de Python
-FROM python:3.10-slim
+FROM tesseractshadow/tesseract4re:4.1.0
 
-# Crear un directorio de trabajo
+# Agrega Python y otras dependencias necesarias
+RUN apt-get update && apt-get install -y python3 python3-pip
+
+# Configura el directorio de trabajo
 WORKDIR /app
 
-# Copiar todos los archivos del proyecto al contenedor
+# Copia tu aplicación
 COPY . .
 
-# Dar permisos de ejecución al archivo 'cca' si es necesario
-RUN chmod +x /app/cca_vc.py
+# Instala las dependencias de Python
+RUN pip3 install --no-cache-dir -r requirements.txt
 
-# Instalar dependencias
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Comando para ejecutar el bot
-CMD ["python", "/app/cca_vc.py"]
+CMD ["python3", "cca_vc.py"]
