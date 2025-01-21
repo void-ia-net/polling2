@@ -5,12 +5,17 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 import pytesseract
 from PIL import Image
+from dotenv import load_dotenv
+
+load_dotenv()
+
+TOKENBOT = os.getenv("TOKENBOT")
 
 # Variable global saldo
 saldo = 0
 
 # ID user que acredita pagos
-USER_ID_RESTA = 961552024
+USER_ID_RESTA = os.getenv("USERESTA")
 
 # Conversion Tess
 # Ruta del ejecutable de Tesseract
