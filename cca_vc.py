@@ -141,4 +141,4 @@ if __name__ == "__main__":
 
     # Inicia el bot
     print("Bot en ejecución...")
-    application.run_polling()
+    application.run_polling(drop_pending_updates=True)
