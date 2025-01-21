@@ -6,10 +6,6 @@ from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, fil
 import pytesseract
 from PIL import Image
 
-
-# Ruta tess
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-
 # Variable global saldo
 saldo = 0
 
