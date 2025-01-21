@@ -1,17 +1,23 @@
-# Usa una imagen base de Python
+# Usa una imagen base con Python
 FROM python:3.10-slim
 
-# Crear un directorio de trabajo
+# Instala Tesseract OCR y dependencias necesarias
+RUN apt-get update && apt-get install -y \
+    tesseract-ocr \
+    libtesseract-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Establece el directorio de trabajo
 WORKDIR /app
 
-# Copiar todos los archivos del proyecto al contenedor
+# Copia los archivos del proyecto al contenedor
 COPY . .
 
-# Dar permisos de ejecución al archivo 'cca' si es necesario
-RUN chmod +x /app/cca_vc.py
-
-# Instalar dependencias
+# Instala las dependencias de Python
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Comando para ejecutar el bot
-CMD ["python", "/app/cca_vc.py"]
+# Asegúrate de que el ejecutable de Tesseract esté en el PATH
+ENV TESSERACT_PATH="/usr/bin/tesseract"
+
+# Define el comando para ejecutar tu aplicación
+CMD ["python", "cca_vc.py"]
