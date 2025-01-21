@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Dar permisos de ejecución al archivo 'cca' si es necesario
-RUN chmod +x /app/cca
+RUN chmod +x /app/cca_vc.py
 
 # Instalar dependencias
 RUN pip install --no-cache-dir -r requirements.txt
