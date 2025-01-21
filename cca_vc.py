@@ -13,6 +13,8 @@ saldo = 0
 USER_ID_RESTA = 961552024
 
 # Conversion Tess
+# Ruta del ejecutable de Tesseract
+pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
 
 
 def extract_amount_from_receipt(image_path, user_id):
