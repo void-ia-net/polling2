@@ -2,6 +2,8 @@
 FROM python:3.10-slim
 
 # Instala Tesseract OCR y dependencias necesarias
+# get update es para saber que paquetes estan instalados y apt-get install -y es para instalar los paquetes necesarios. elargument  -y es para que diga si a todo
+# && rm -rf /var/lib/apt/lists/* borra los archivos temporales que se crean al instalar los paquetes
 RUN apt-get update && apt-get install -y \
     tesseract-ocr \
     libtesseract-dev \
