@@ -18,9 +18,5 @@ COPY . .
 # Instala las dependencias de Python
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy Tesseract and application from builder
-COPY --from=builder /usr/bin/tesseract /usr/bin/tesseract
-COPY --from=builder /app /app
-
 # Define el comando para ejecutar tu aplicación
 CMD ["python", "cca_vc.py"]
