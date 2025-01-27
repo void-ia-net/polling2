@@ -17,10 +17,6 @@ saldo = 0
 # ID user que acredita pagos
 USER_ID_RESTA = os.getenv("USERESTA")
 
-# Conversion Tess
-# Ruta del ejecutable de Tesseract
-pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
-
 
 def extract_amount_from_receipt(image_path, user_id):
 
