@@ -21,9 +21,6 @@ USER_ID_RESTA = int(os.getenv("USERESTA"))
 
 saldo = 0
 
-# Ruta del ejecutable de Tesseract (dentro de docker image alpine)
-pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
-
 
 def extract_amount_from_receipt(image_path, user_id):
     """ Extraer el importe de un comprobante de pago """
