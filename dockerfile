@@ -18,8 +18,9 @@ COPY . .
 # Instala las dependencias de Python
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Asegúrate de que el ejecutable de Tesseract esté en el PATH
-ENV TESSERACT_PATH="/usr/bin/tesseract"
+# Copy Tesseract and application from builder
+COPY --from=builder /usr/bin/tesseract /usr/bin/tesseract
+COPY --from=builder /app /app
 
 # Define el comando para ejecutar tu aplicación
 CMD ["python", "cca_vc.py"]
