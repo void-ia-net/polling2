@@ -121,7 +121,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 if __name__ == "__main__":
     # Crea la aplicación con tu token del bot
     application = ApplicationBuilder().token(
-        "7217321621:AAGxM_YF39jRsKaPFF8lZeuPcrandeKT0Mc").build()
+        TOKENBOT).build()
 
     # Comandos
     application.add_handler(CommandHandler("start", start))
