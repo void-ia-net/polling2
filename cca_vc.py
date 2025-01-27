@@ -1,6 +1,6 @@
 """
 Este programa contiene funciones para gestionar el saldo
-de una cuenta corriente dentro de un grupo de telegram.
+de una cuenta corriente en un grupo de telegram.
 Incluye operaciones como incrementar, decrementar y consultar el saldo.
 Informa el saldo actualizado al grupo cada vez que se realiza una operación.
 """
