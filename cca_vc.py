@@ -60,7 +60,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
             ',', 'X').replace('.', ',').replace('X', '.')
         await context.bot.send_message(
             chat_id=update.effective_chat.id,
-            text=f"Saldo: $ {saldo_mostrar}"
+            text=f"$ {saldo_mostrar}"
         )
     except ValueError:
         # Ignorar mensajes que no sean números
