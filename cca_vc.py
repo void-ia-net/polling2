@@ -89,7 +89,7 @@ async def handle_image(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
             ',', 'X').replace('.', ',').replace('X', '.')
         await context.bot.send_message(
             chat_id=update.effective_chat.id,
-            text=f"Saldo: $ {saldo_mostrar}"
+            text=f"$ {saldo_mostrar}"
         )
     else:
         await context.bot.send_message(
